@@ -1,0 +1,21 @@
+.header {
+    height: 60px;
+    margin: 0 auto;
+
+    &-wrapper {
+        background-color: #fff;
+        box-shadow: 0 0 10px 0 #00000030;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+    }
+
+    &-logo {
+        height: 20px;
+
+        img {
+            height: 100%;
+        }
+    }
+}

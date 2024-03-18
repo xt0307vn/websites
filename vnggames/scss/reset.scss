@@ -1,0 +1,31 @@
+:root {
+    font-size: 16px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: none;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: inherit;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+button, input, textarea {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}

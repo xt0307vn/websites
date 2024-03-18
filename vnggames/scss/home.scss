@@ -1,0 +1,285 @@
+.banner {
+    &__main {
+        max-width: 1080px;
+        width: 100%;
+        height: 432px;
+        background: url("./../assets/images/KTO_hero_banner_d73002bfab.webp"),
+            linear-gradient(
+                to top,
+                #000 0%,
+                transparent 40%,
+                transparent 95%,
+                #00000093 100%
+            );
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-blend-mode: overlay;
+        border-radius: 20px;
+        z-index: 3;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border: 10px solid #ffffff5c;
+            position: absolute;
+            border-radius: 20px;
+        }
+    }
+
+    &__logo {
+        width: 227px;
+        height: 64px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__desc {
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 650px;
+    }
+
+    &__thumbnail {
+        width: 80px;
+        height: 80px;
+        // background: url("./../assets/images/KTO_appicon_28c8f70871.webp");
+        // background-repeat: no-repeat;
+        // background-position: center center;
+        // background-size: cover;
+        border-radius: 8px;
+        position: relative;
+        z-index: 3;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            border: 5px solid #fff;
+            position: absolute;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: inherit;
+        }
+    }
+
+    &-wrapper {
+        height: 720px;
+        width: 100%;
+        background: url("./../assets/images/KTO_hero_banner_d73002bfab.webp"),
+            linear-gradient(to right, #f7741d 10%, #006daf 90%);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        position: relative;
+        background-blend-mode: overlay;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 40%;
+            position: absolute;
+            z-index: 1;
+            background-image: linear-gradient(
+                0,
+                #ffffff 0%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            bottom: -1px;
+            left: 0;
+        }
+    }
+}
+
+.genre {
+    &-wrapper {
+        background: url("./../assets/images/category-bg_2x.webp"),
+            linear-gradient(
+                to top,
+                #fff 0%,
+                rgba(247, 167, 136, 0.34) 40%,
+                #c5ebff 60%,
+                #fff 100%
+            );
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: overlay;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__slide {
+        display: flex;
+        max-width: 1080px;
+        width: 100%;
+        gap: 20px;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 25px 0;
+        overflow: hidden;
+    }
+
+    &__card {
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 245px;
+        height: 385px;
+        flex-shrink: 0;
+
+        &--inactive {
+            transform: scale(0.47);
+
+            &:first-child {
+                transform: scale(0.47) translateX(50%);
+            }
+
+            &:last-child {
+                transform: scale(0.47) translateX(-50%);
+            }
+        }
+    }
+
+    &__card--inactive &__image {
+    }
+
+    &__card--inactive &__param {
+        display: none;
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__name, &__vote {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 40px;
+    }
+}
+
+// promotion
+.promotion {
+    &-wrapper {
+        max-width: 100vw;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        gap: 20px;
+        padding: 30px 0;
+        margin: 60px 0;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            background: url("./../assets/images/Taydu_banner_2f5edbcac3.webp"), linear-gradient(180deg, rgba(245, 97, 42, 0.96) 0.41%, #C95E28 38.78%, #548BBF 77.60%, #0E6BD8 100%);
+            background-blend-mode: overlay;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: right;
+            border-radius: 8px;
+            backdrop-filter: blur(30px);
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+        &::after {
+            content: "";
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+    }
+
+    &__slogan {
+        max-width: 390px;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__desc {
+        max-width: 390px;
+        font-size: 14px;
+    }
+
+    &__banner {
+        border-radius: 10px;
+        flex: 0.58;
+        position: relative;
+        box-shadow: 0 0 20px 0 #fff;
+        // z-index: 10;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 0 8px 8px 0;
+            border: 8px solid #ffffff6c;
+            border-left: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0px 8px 8px 0px;
+        }
+    }
+
+    &__catchphrase {
+        color: #fff;
+        flex: 0.42 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: center;
+        // z-index: 10;
+    }
+}
