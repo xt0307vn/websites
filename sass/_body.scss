@@ -1,0 +1,32 @@
+body {
+    width: 1536px;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    padding: 5px 0;
+    align-items: center;
+}
+
+div {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px #ccc solid;
+    transition: all 1s linear;
+    
+}
+
+.active {
+    background-color: #FEBBCC;
+    animation: heart 1s infinite linear;
+}
+
+
+@keyframes heart {
+    to {
+        transform: scale(1.1);
+    }
+}
