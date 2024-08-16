@@ -1,0 +1,14 @@
+.footer {
+  padding: 2rem 0;
+  &__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  background: #000;
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #fff;
+  }
+}

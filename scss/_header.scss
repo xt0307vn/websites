@@ -1,0 +1,120 @@
+
+.header {
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  background-color: #fff;
+  top: 0;
+  &__top {
+    height: 36px;
+    background-color: #37312F;
+    &--inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+
+      .expand {
+        &__list {
+          display: flex;
+        }
+
+        &__item a{
+          display: flex;
+          padding: 8px;
+          align-items: center;
+          gap: 4px;
+        }
+
+        &__icon {
+          color: #fff;
+          font-size: 20px;
+        }
+
+        &__title {
+          font-size: 12px;
+          color: #fff;
+          font-weight: normal;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    height: var(--min-height);
+    .header {
+      &__nav {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &__logo {
+        width: 141px;
+        height: 20px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &__divider--y {
+        width: 2px;
+        height: 22px;
+        background-color: #6E625E;
+      }
+
+      &__language {
+        .language {
+          &__box {
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+          }
+          &__icon {
+            font-size: 20px;
+            color: #615653;
+          }
+
+          &__name {
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #615653;
+          }
+        }
+      }
+    }
+    .menu {
+      &__list {
+        display: flex;
+        gap: 20px;
+      }
+
+      &__item {
+        color: #605653;
+        font-size: 1rem;
+        font-weight: normal;
+        line-height: 2rem;
+
+        &--active {
+          color: #F05C22;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .btn-login {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(#F05C22, #DF3B21);
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+}
+
+
+
