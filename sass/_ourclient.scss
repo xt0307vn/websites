@@ -1,0 +1,22 @@
+.ourclient {
+
+    margin-bottom: 94px;
+    &-heading {
+        margin-bottom: 17px;
+    }
+
+    .services {
+        display: flex;
+        gap: 60px;
+
+        .text {
+            width: 336px;
+            display: inline-block;
+        }
+
+        .service-image {
+            display: inline-block;
+            object-fit: contain;
+        }
+    }
+}
