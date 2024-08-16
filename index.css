@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.carousel__wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+.carousel__list {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.carousel__image {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__content {
+    display: none;
+    max-width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.carousel__title {
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 8px;
+    font-size: xx-large;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background-color: #ffffff3c;
+    backdrop-filter: blur(10px);
+    width: fit-content;
+}
+
+.carousel__topic {
+    display: inline-block;
+    padding: 0px 20px;
+    border-radius: 8px;
+    background-color: #ffffff3c;
+    backdrop-filter: blur(10px);
+    font-size: 50px;
+    font-weight: 700;
+    color: #ff7300;
+    margin-bottom: 5px;
+    width: fit-content;
+}
+
+.carousel__desc {
+    display: inline-block;
+    width: fit-content;
+    padding: 0px 20px;
+    border-radius: 8px;
+    background-color: #ffffff3c;
+    backdrop-filter: blur(10px);
+    font-size: 20px;
+}
+
+.carousel__item {
+    position: absolute;
+}
+
+.carousel__item:nth-child(1),
+.carousel__item:nth-child(2) {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+@keyframes showCarousel {
+    from {
+        height: 300px;
+        width: 200px;
+        top: 50%;
+        left: calc(50%);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    to {
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 0px;
+    }
+}
+
+.carousel__item:nth-child(1) .carousel__content,
+.carousel__item:nth-child(2) .carousel__content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.carousel__item:nth-child(n + 3) {
+    height: 300px;
+    width: 200px;
+    top: 50%;
+    left: calc(50%);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.carousel__item:nth-child(4) {
+    left: calc(50% + 210px);
+}
+
+.carousel__item:nth-child(n + 5) {
+    left: calc(50% + 210px * 2);
+}
+
+.carousel__item:nth-child(n + 6) {
+    left: calc(100% - 210px);
+
+    opacity: 0;
+}
+
+.carousel__item .carousel__content .carousel__title,
+.carousel__item .carousel__content .carousel__topic,
+.carousel__item .carousel__content .carousel__desc {
+    transform: translateY(50px);
+    filter: blur(10px);
+    opacity: 0;
+    animation: showContent 0.9s ease-in-out 1 forwards;
+}
+
+.carousel__item .carousel__content .carousel__topic {
+    animation-delay: 0.2s;
+}
+
+.carousel__item .carousel__content .carousel__desc {
+    animation-delay: 0.4s;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.carousel__controls {
+    position: absolute;
+    bottom: 50px;
+    left: 20%;
+}
+
+.carousel__controls button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    opacity: 50%;
+}
+
+.carousel__controls button:first-child {
+    animation: showButtonLeft 1s ease-in-out 1 forwards;
+}
+
+.carousel__controls button:last-child {
+    animation: showButtonRight 1s ease-in-out 1 forwards;
+}
+
+@keyframes showButtonLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 0.5;
+        transform: translateX(0px);
+        filter: blur(0);
+    }
+}
+
+@keyframes showButtonRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 0.5;
+        transform: translateX(0px);
+        filter: blur(0);
+    }
+}
+
+.carousel__controls button:hover {
+    opacity: 1;
+    transition: all 0.4s linear;
+}
