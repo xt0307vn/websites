@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oclock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            background-color: #63139186;
+        }
+
+        .clock {
+            width: 400px;
+            height: 400px;
+            background-color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: inset 0px 0px 30px #63139170;
+        }
+
+        .clock::before {
+            content: " ";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #42A5F5;
+            position: absolute;
+            z-index: 9;
+        }
+        .hands {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid #621391;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .circle::before {
+            content: " ";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--clr);
+            transform: translate(-0%, -50%);
+        }
+
+
+
+        .circle#sec {
+            width: calc(100% - 100px);
+            height: calc(100% - 100px);
+        }
+        .circle#mns {
+            width: calc(100% - 150px);
+            height: calc(100% - 150px);
+        }
+        .circle#hrs {
+            width: calc(100% - 200px);
+            height: calc(100% - 200px);
+        }
+
+        .circle i {
+            position: absolute;
+            width: var(--w);
+            height: 50%;
+            background-color: var(--clr);
+            transform: scaleY(0.5);
+            border-radius: 20px;
+            transform-origin: bottom;
+        }
+
+
+        .numbers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .number {
+            position: absolute;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            text-align: center;
+            transform: rotate(calc(var(--i) * 30deg));
+            font-weight: 500;
+        }
+
+        .lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .line-h {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: red;
+            top: 50%;
+            visibility: hidden;
+        }
+
+        .line-v {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: red;
+            left: 50%;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <iv class="lines">
+            <div class="line-h"></div>
+            <div class="line-v"></div>
+        </iv>
+        <div class="hands">
+            <div class="circle" id="sec" style="--clr:#FFCA28;--w:2px"><i></i></div>
+            <div class="circle" id="mns" style="--clr:#62863A;--w:4px"><i></i></div>
+            <div class="circle" id="hrs" style="--clr:#E44D26;--w:6px"><i></i></div>
+        </div>
+        <div class="numbers">
+            <div class="number" style="--i:0">12</div>
+            <div class="number" style="--i:1">1</div>
+            <div class="number" style="--i:2">2</div>
+            <div class="number" style="--i:3">3</div>
+            <div class="number" style="--i:4">4</div>
+            <div class="number" style="--i:5">5</div>
+            <div class="number" style="--i:6">6</div>
+            <div class="number" style="--i:7">7</div>
+            <div class="number" style="--i:8">8</div>
+            <div class="number" style="--i:9">9</div>
+            <div class="number" style="--i:10">10</div>
+            <div class="number" style="--i:11">11</div>
+        </div>
+    </div>
+
+    <script>
+        const handSec = document.querySelector("#sec")
+        const handMns = document.querySelector("#mns")
+        const handHrs = document.querySelector("#hrs")
+
+        const hh = 30;
+        const mm = 6;
+        const ss = 6;
+
+        
+        setInterval(() => {
+            const date = new Date
+            handHrs.style.transform = `rotate(${hh * date.getHours()}deg)`
+            handMns.style.transform = `rotate(${mm * date.getMinutes()}deg)`
+            handSec.style.transform = `rotate(${ss * date.getSeconds()}deg)`
+
+        });
+
+    </script>
+</body>
+</html>
+
+<!--    1      1
+        2      2s
+        3      3
+        4      4
+        5      5
+        6      6
+        7      7
+        8      8
+        9      9
+        A      A
+        B      B 
+        C      C 
+        D      D 
+        E      E 
+        F      F -->
