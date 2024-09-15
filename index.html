@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +18,7 @@
 
 			.wrapper {
 				width: 100%;
+				position: relative;
 			}
 
 			.images {
@@ -41,6 +42,28 @@
 				display: block;
 			}
 
+			.auth {
+				width: 100%;
+				height: 100vh;
+				background: #fff;
+				top: 0;
+				left: 0;
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.auth-form input {
+				padding: 5px 10px;
+			}
+
+			.unauthenticated {
+				overflow: hidden;
+			}
+
 			@media screen and (max-width: 1536px) {
 				.images {
 					grid-template-columns: 1fr 1fr;
@@ -57,8 +80,20 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body class="unauthenticated">
 		<div class="wrapper">
+			<div class="auth">
+				<div class="auth-form">
+					<input type="text" placeholder="username" class="auth-username" value="">
+				</div>
+				<div class="auth-form">
+					<input type="password" placeholder="password" class="auth-password" value="">
+				</div>
+				<div class="auth-form">
+					<input type="button" class="btn-login" value="Xác nhận" />
+				</div>
+				<p class="error"></p>
+			</div>
 			<div class="images">
 				<div class="image"><img src="./images/1722010619_E1BAA2nh20Sex203D20HE1BB8Fa20Linh20Nhi20ThE1BABF2.jpeg" alt="1722010619_E1BAA2nh20Sex203D20HE1BB8Fa20Linh20Nhi20ThE1BABF2.jpeg"/></div>
 				<div class="image"><img src="./images/anh-sex-2d-mitsuri-kanroji-r18-80-pics -1-.jpg" alt="anh-sex-2d-mitsuri-kanroji-r18-80-pics -1-.jpg"/></div>
@@ -559,5 +594,22 @@
 				<div class="image"><img src="./images/anh-sex-3d-van-hi-the-gioi-hoan-my-70-anh -9-.png" alt="anh-sex-3d-van-hi-the-gioi-hoan-my-70-anh -9-.png"/></div>
 			</div>
 		</div>
+
+		<script>
+			const body = document.querySelector("body")
+			const auth = document.querySelector(".auth")
+			const btnLogin = document.querySelector(".btn-login")
+			const inputUsername = document.querySelector(".auth-username")
+			const inputPassword = document.querySelector(".auth-password")
+			const error = document.querySelector(".error")
+			btnLogin.addEventListener("click", function() {
+				if (inputUsername.value == "xt0307vn" && inputPassword.value == "xt0307vn") {
+					body.style.overflow = "auto"
+					auth.style.display = "none"
+				} else {
+					error.textContent = "Not invalid";
+				}
+			})
+		</script>
 	</body>
 </html>
